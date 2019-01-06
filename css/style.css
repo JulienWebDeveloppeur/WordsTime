@@ -1,0 +1,225 @@
+/*
+Main color : #F9A891
+Font-families :
+- 'K2D': 300,400,600,700,800,900
+- 'EXO 2': 300,400,500,600,700,800,900
+*/
+
+/*-------------Reset CSS-----------------------*/
+body {
+margin:0px;
+padding: 10px;
+font-family: 'ROBOTO', sans-serif;
+font-size: 15px;
+margin: 0;
+background-color: #fff;
+}
+/*Surligner le texte en couleur avec la souris*/
+::-moz-selection {
+color: white;
+background:  #431B0F;
+}
+::selection {
+color: white;
+background:  #431B0F;
+}
+a {
+text-decoration: none;
+color: white;
+}
+/*------Titles------*/
+h1,h2,h3,h4,h5,h6 {
+margin: 20px 0;
+}
+h1 {
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: -1.5px;
+    }
+h2 {
+    font-size: 2.5rem;
+    letter-spacing: -0.5px;
+    font-weight: 600;
+    color: #431B0F;
+    }
+h3,h4,h5,h6 {
+font-weight: 400;
+margin: 10px 0;	
+}
+h4 {
+font-size: 1.6rem;
+color: #431B0F;
+}
+h5 {
+font-size: 1.4rem;
+}
+h6 {
+font-size: 1.2rem;
+}
+p {
+color: #431B0F !important;
+opacity: 0.8;  
+}
+img {
+  max-width: 100%;
+}
+/*------Prefixed Class------*/
+.text-white {
+  color: white !important;
+}
+.text-choco {
+color: #431B0F;
+}
+.align-center {
+-webkit-display: flex;
+-webkit-flex-direction: row;
+-webkit-justify-content: center;
+}
+.text-10 {
+  font-size: 10px;
+}
+.title-20{
+font-size: 20px;
+}
+.title-30{
+font-size: 30px;
+}
+.title-50 {
+  font-size: 50px;
+}
+.bold {
+  font-weight: 900;
+}
+.citation {
+font-family: 'dancing', cursive;  
+}
+.icon {
+  width: 60px;
+}
+.btn {
+  padding: 20px;
+  background-color: #431B0F;
+color: white;
+font-size: 30px;
+border :none;
+opacity:0.8;
+}
+.btn-primary:hover {
+background-color: #431B0F;
+border :none;
+opacity:1;
+}
+.end {
+  width: 200px;
+font-size: 20px;  
+}
+.student {
+  width: 150px;
+}
+.student-mini {
+  width: 50px;
+}
+#level {
+  margin-top: 200px;
+    }
+#level #level-info {
+  font-weight: 900;
+  border-radius: 5px;
+  padding: 50px;
+    -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  -ms-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  -o-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+.letter-win {
+  position:relative;
+  animation: 500ms letterWin ease-in;
+}
+@keyframes letterWin{
+from {bottom :0;right:0;transform: rotate(0deg); color: #76ff03;}
+to {bottom :300px;right:300px;transform: rotate(180deg);color: #76ff03;}
+}
+.progress {
+  width: 200px;
+}
+.progress-5 {
+animation: 5s progressLevel1 linear;
+  border-radius: 5px;
+}
+.progress-4 {
+animation: 4s progressLevel1 linear;
+  border-radius: 5px;
+}
+.progress-3 {
+animation: 3s progressLevel1 linear;
+  border-radius: 5px;
+}
+.progress-2 {
+animation: 2s progressLevel1 linear;
+  border-radius: 5px;
+}
+.progress-1 {
+animation: 1500ms progressLevel1 linear;
+  border-radius: 5px;
+}
+#word-to-write {
+height: 100px;
+font-size: 80px;
+}
+@keyframes progressLevel1 {
+0% {width: 100%;height:25px;background-color:#76ff03 ;}
+50% {width: 50%;height:25px;background-color:#ff6f00; }
+100% {width: 0%;height:25px;background-color:#a30000; }
+}
+.letter-wrong {
+  animation: 100ms letterWrong ease-in 5;  
+}
+@keyframes letterWrong{
+from {transform: scale3d(1,1,1); color: #a30000;}
+to {transform: scale3d(1,1.3,1);color: #a30000;}
+}
+#life1,#life2,#life3 {
+  width: 100px;
+}
+.lost-life {
+  position: relative;
+    animation: 500ms lostLife ease-in; 
+}
+@keyframes lostLife{
+from {top :0;color: #a30000;}
+to {top :500px;color: #a30000;}
+}
+#word-to-write {
+  font-size: 20px;
+  color:#431B0F;
+}
+html,body {
+  overflow-x: hidden;
+}
+#animation-press {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  border-radius: 20px;
+    -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  -ms-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  -o-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    height: 200px;
+}
+@media (max-width: 576px) { 
+#word-to-write {
+  border-radius: 5px;
+  border:none;
+  color: transparent;
+}
+#animation-press  {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.progress {
+  width: 100px;
+}
+}
+
