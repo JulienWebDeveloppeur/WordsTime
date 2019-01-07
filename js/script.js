@@ -251,6 +251,7 @@ function level() {
     } else {
         nextStep(levelUp);
     }
+        openKeyboard();
 }
 
 function messageNiveau() {
@@ -456,12 +457,12 @@ function nextLevel() {
             level();
         }, 5500);
     }
-    openKeyboard();
     if (levelUp < 5) {
         eltWordToPress.textContent = letterGenerator[getRandomInt2(0, letterGenerator.length)];
     } else {
         eltWordToPress.textContent = wordGenerator[getRandomInt2(0, wordGenerator.length)];
     }
+    openKeyboard();
 }
 
 function progressBar() {
