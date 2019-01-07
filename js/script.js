@@ -243,7 +243,7 @@ function level() {
         timeLeft = 5;
         levelUp = 4;
         messageNiveau();
-    } else if (score === 1 && level5 === false) {
+    } else if (score === 40 && level5 === false) {
         level5 = true;
         timeLeft = 5;
         levelUp = 5;
