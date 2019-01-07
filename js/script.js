@@ -243,7 +243,7 @@ function level() {
         timeLeft = 5;
         levelUp = 4;
         messageNiveau();
-    } else if (score === 40 && level5 === false) {
+    } else if (score === 1 && level5 === false) {
         level5 = true;
         timeLeft = 5;
         levelUp = 5;
@@ -251,7 +251,7 @@ function level() {
     } else {
         nextStep(levelUp);
     }
-        openKeyboard();
+    openKeyboard();
 }
 
 function messageNiveau() {
@@ -276,6 +276,17 @@ function messageNiveau() {
     window.clearTimeout(seconde19);
     window.clearTimeout(seconde20);
     window.clearTimeout(seconde21);
+    if (eltTimeLeft.classList.contains("progress-5")) {
+        eltTimeLeft.classList.remove("progress-5");
+    } else if (eltTimeLeft.classList.contains("progress-4")) {
+        eltTimeLeft.classList.remove("progress-4");
+    } else if (eltTimeLeft.classList.contains("progress-3")) {
+        eltTimeLeft.classList.remove("progress-3");
+    } else if (eltTimeLeft.classList.contains("progress-2")) {
+        eltTimeLeft.classList.remove("progress-2");
+    } else if (eltTimeLeft.classList.contains("progress-1")) {
+        eltTimeLeft.classList.remove("progress-1");
+    }
     if (levelUp < 5) {
         eltWordToPress.style.fontSize = "20px";
         eltWordToPress.textContent = " Niveau " + levelUp;
@@ -313,6 +324,9 @@ function messageNiveau() {
         }, 5000);
         seconde5 = window.setTimeout(function() {
             eltWordToPress.style.fontSize = "100%";
+            eltWordToWrite.style.border = "2px solid #431B0F"
+            eltWordToWrite.style.color = "#431B0F"
+            eltWordToWrite.value = "";
             nextStep();
         }, 6000);
     }
