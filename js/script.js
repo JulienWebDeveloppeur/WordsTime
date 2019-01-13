@@ -157,9 +157,9 @@ function loseKey() {
         delayedAlert(eltLife1);
         life--;
     }
-    eltAnimation.classList.add("letter-wrong");
+    eltWordToPress.classList.add("letter-wrong");
     seconde20 = window.setTimeout(function() {
-        eltAnimation.classList.remove("letter-wrong");
+        eltWordToPress.classList.remove("letter-wrong");
     }, 500);
 }
 
@@ -172,9 +172,9 @@ window.addEventListener("keypress", function(event) {
     if (levelUp < 5 && eltPlay.hidden === false) {
         if (eltWordToPress.textContent === event.key.toUpperCase()) {
             score++;
-            eltAnimation.classList.add("letter-win");
+            eltWordToPress.classList.add("letter-win");
             seconde21 = window.setTimeout(function() {
-                eltAnimation.classList.remove("letter-win");
+                eltWordToPress.classList.remove("letter-win");
                 level();
             }, 500);
             eltWordToWrite.value = "";
@@ -188,9 +188,9 @@ window.addEventListener("keypress", function(event) {
         if (eltWordToWrite.value.toUpperCase() === eltWordToPress.textContent) {
             score++;
             eltWordToWrite.value = "";
-            eltAnimation.classList.add("letter-win");
+            eltWordToPress.classList.add("letter-win");
             seconde21 = window.setTimeout(function() {
-                eltAnimation.classList.remove("letter-win");
+                eltWordToPress.classList.remove("letter-win");
                 level();
             }, 500);
             eltScore[0].textContent = score;
@@ -200,7 +200,21 @@ window.addEventListener("keypress", function(event) {
         }
     }
 }, false);
-
+eltWordToWrite.addEventListener("input", function(event) {
+    if (levelUp >= 5 && eltPlay.hidden === false) {
+        if (eltWordToWrite.value.toUpperCase() === eltWordToPress.textContent) {
+            score++;
+            eltWordToWrite.value = "";
+            eltWordToPress.classList.add("letter-win");
+            seconde21 = window.setTimeout(function() {
+                eltWordToPress.classList.remove("letter-win");
+                level();
+            }, 500);
+            eltScore[0].textContent = score;
+            eltScore[1].textContent = "Votre score " + score;
+        }
+    }
+}, false)
 
 function level() {
     window.clearTimeout(seconde1);
@@ -245,7 +259,7 @@ function level() {
         messageNiveau();
     } else if (score === 40 && level5 === false) {
         level5 = true;
-        timeLeft = 5;
+        timeLeft = 6;
         levelUp = 5;
         messageNiveau();
     } else {
@@ -445,11 +459,11 @@ function nextLevel() {
             }
             level();
 
-        }, 1500);
+        }, 2000);
     }
     if (levelUp === 5) {
         eltWordToWrite.classList.remove("d-sm-none")
-        timeLeft = 5;
+        timeLeft = 6;
         progressBar();
         seconde6 = window.setTimeout(function() {
             timeLeft--;
@@ -465,11 +479,14 @@ function nextLevel() {
         }, 4500);
         seconde10 = window.setTimeout(function() {
             timeLeft--;
+        }, 5500);
+        seconde11 = window.setTimeout(function() {
+            timeLeft--;
             if (timeLeft <= 0) {
                 lose();
             }
             level();
-        }, 5500);
+        }, 6500);
     }
     if (levelUp < 5) {
         eltWordToPress.textContent = letterGenerator[getRandomInt2(0, letterGenerator.length)];
